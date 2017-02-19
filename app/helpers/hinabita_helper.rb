@@ -1,0 +1,2 @@
+module HinabitaHelper
+end

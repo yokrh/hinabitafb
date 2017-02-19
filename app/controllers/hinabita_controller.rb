@@ -1,0 +1,2 @@
+class HinabitaController < ApplicationController
+end
