@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# setting consts (https://blog.hello-world.jp.net/ruby/2268/)
+gem 'config'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
