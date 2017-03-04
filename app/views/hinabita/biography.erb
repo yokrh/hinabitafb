@@ -15,8 +15,14 @@
   <% end %>
 </ul>
 
-<%= link_to '前へ', root_path(uri: @pg_prev) %>
-<%= link_to '次へ', root_path(uri: @pg_next) %>
+<ul class="links">
+  <li class="prev">
+    <%= link_to '前へ', root_path(uri: @pg_prev) %>
+  </li>
+  <li class="next">
+    <%= link_to '次へ', root_path(uri: @pg_next) %>
+  </li>
+</ul>
 
 <div class="search">
   <ul class="condition-list">
