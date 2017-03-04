@@ -1,3 +1,29 @@
-<p>
-  hello hinabita!
-</p>
+<h1 class="page-title">BIOGRAPHY</h1>
+<ul class="post-list">
+  <% @posts.each_with_index do |post, i| %>
+  <li class="post <%= post.html_class %> <%= i-(i/2)*2 == 1 ? 'even' : 'odd' %>">
+    <div class="header">
+        <span class="face"><%= post.face %></span>
+        FROM
+        <span class="name"><%= post.name %></span>
+        <span class="date"><%= post.date %></span>
+    </div>
+    <div class="comment">
+      <%= text_url_to_link(post.comment) %>
+    </div>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to '前へ', root_path(uri: @pg_prev) %>
+<%= link_to '次へ', root_path(uri: @pg_next) %>
+
+<div class="search">
+  <ul class="condition-list">
+    <li class="from-date"><input type="date" value="<%= @from_date %>"></li>
+    <li class="to-date"><input type="date" value="<%= @to_date %>"></li>
+    <li class="radio"><input type="checkbox">ラジオあり</li>
+    <li class="picture"><input type="checkbox">画像あり</li>
+    <li class="attachment"><input type="checkbox">添付あり（ラジオ、画像含む）</li>
+  </ul>
+</div>
