@@ -27,10 +27,11 @@ class Character
     @@characters.each do |k, character|
       return k if character[:name] == name
     end
+    @@unknown
   end
 
   def self.know(post)
-    return false unless post
+    return false if post.blank?
     post.name != @@unknown
   end
 
