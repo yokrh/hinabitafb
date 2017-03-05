@@ -8,9 +8,22 @@
         <span class="name"><%= post.name %></span>
         <span class="date"><%= post.date %></span>
     </div>
-    <div class="comment">
-      <%= text_url_to_link(post.comment) %>
+    <div class="comment-container">
+      <% if post.comment then %>
+        <%= text_url_to_link(post.comment) %>
+      <% end %>
+      <% if post.has_picture then %>
+        <img class="image" src="<%= post.picture_url %>" />
+      <% end %>
     </div>
+    <% if post.has_attachment then %>
+      <% if post.has_video then %>
+        <p class="video">動画の投稿があるよ！→</p>
+      <% else %>
+        <p class="attachment">リンクや画像のシェアがあるよ！→</p>
+      <% end %>
+    <% end %>
+    <a class="fb-link" href="https://www.facebook.com/<%= post.post_id %>">Facebookに飛ぶ</a>
   </li>
   <% end %>
 </ul>
