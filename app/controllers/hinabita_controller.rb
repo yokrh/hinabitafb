@@ -8,8 +8,7 @@ class HinabitaController < ApplicationController
     page = "hinabitter"
     api = "feed"
     fields = "created_time,message,link,story,picture,full_picture"
-    limit = "100"
-    limit = "10"
+    limit = "20"
     access_token = Settings.access_token
     unless uri = params[:uri] then
       uri = "https://graph.facebook.com/v2.8/" + page + "/" + api;
@@ -24,7 +23,7 @@ class HinabitaController < ApplicationController
     @posts = []
     res["data"].each do |data|
       post = Post.find_by_post_id(data["id"])
-      unless post || Character.know(post)
+      unless Character.know(post)
         post = Post.create_with_post_data data
       end
       @posts << post
