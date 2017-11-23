@@ -1,6 +1,16 @@
+<ul class="links">
+  <li class="prev">
+    <%= link_to '前へ', root_path(uri: @pg_prev) %>
+  </li>
+  <li class="next">
+    <%= link_to '次へ', root_path(uri: @pg_next) %>
+  </li>
+</ul>
+
 <h1 class="page-title">BIOGRAPHY</h1>
+
 <ul class="post-list">
-  <% @posts.each_with_index do |post, i| %>
+  <% @posts.reverse.each_with_index do |post, i| %>
   <li class="post <%= post.html_class %> <%= i-(i/2)*2 == 1 ? 'even' : 'odd' %>">
     <div class="header">
         <span class="face"><%= post.face %></span>
@@ -8,9 +18,22 @@
         <span class="name"><%= post.name %></span>
         <span class="date"><%= post.date %></span>
     </div>
-    <div class="comment">
-      <%= text_url_to_link(post.comment) %>
+    <div class="comment-container">
+      <% if post.comment then %>
+        <%= text_url_to_link(post.comment) %>
+      <% end %>
+      <% if post.has_picture then %>
+        <img class="image" src="<%= post.picture_url %>" />
+      <% end %>
     </div>
+    <% if post.has_attachment then %>
+      <% if post.has_video then %>
+        <p class="video">動画の投稿があるよ！→</p>
+      <% else %>
+        <p class="attachment">リンクや画像のシェアがあるよ！→</p>
+      <% end %>
+    <% end %>
+    <a class="fb-link" href="https://www.facebook.com/<%= post.post_id %>">Facebookに飛ぶ</a>
   </li>
   <% end %>
 </ul>

@@ -2,94 +2,137 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  background-color: #57161c;
-}
+// スマホ
+@media screen and (max-width: 480px) {
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #57161c;
+  }
+  ul, p {
+    margin: 0;
+    padding: 0;
+  }
 
-.page-title {
-  padding-left: 4%;
-  height: 40px;
-  line-height: 40px;
-  color: #fff;
-}
+  .page-title {
+    padding-left: 4%;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+  }
 
-.post-list {
-  list-style: none;
-  .post {
-    width: 80%;
-    margin-top: 10px;
+  .post-list {
+    list-style: none;
+    .post {
+      width: 92%;
+      margin: 10px 3%;
+      margin-bottom: 10px;
+      background-color: #eee;
+      &.odd {
+        margin-left: 4%;
+        margin-right: 2%;
+      }
+      &.even {
+        margin-left: 2%;
+        margin-right: 4%;
+      }
+      &.marika {
+        background-color: #f6d174;
+      }
+      &.ibuki {
+        background-color: #fff774;
+      }
+      &.sakiko {
+        background-color: #bca9fb;
+      }
+      &.meu {
+        background-color: #eec2e4;
+      }
+      &.rin {
+        background-color: #98a0b3;
+      }
+      &.kokona {
+        background-color: #b6e0fa;
+      }
+      &.natsuhi {
+        background-color: #e38487;
+      }
+      &.hinata {
+        background-color: #f5eac4;
+      }
+      .header {
+        padding-left: 20px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #533;
+        .face {
+          font-size: 18px;
+        }
+        .name {
+          font-size: 18px;
+        }
+        .date {
+          padding-left: 18px;
+          font-size: 12px;
+        }
+      }
+      .comment-container {
+        //display: none;
+        margin: 0 10px;
+        padding: 0 10px 10px 10px;
+        line-height: 16px;
+        font-size: 13px;
+        white-space: pre-line;
+        background-color: #fff;
+        color: #6e3d1f;
+        .image {
+
+        }
+      }
+      .video, .attachment {
+        display: inline-block;
+        padding-left: 10px;
+        font-size: 12px;
+        color: #a00;
+      }
+      .fb-link {
+        display: inline-block;
+        padding: 10px;
+        font-size: 11px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .links {
+    list-style: none;
+    float: right;
+    margin-right: 4%;
     margin-bottom: 10px;
-    padding-bottom: 14px;
-    &.odd {
-      margin-left: 6%;
-      margin-right: 4%;
-    }
-    &.even {
-      margin-left: 4%;
-      margin-right: 6%;
-    }
-    &.marika {
-      background-color: #f6d174;
-    }
-    &.ibuki {
-      background-color: #fff774;
-    }
-    &.sakiko {
-      background-color: #bca9fb;
-    }
-    &.meu {
-      background-color: #eec2e4;
-    }
-    &.rin {
-      background-color: #98a0b3;
-    }
-    &.kokona {
-      background-color: #e38487;
-    }
-    &.natsuhi {
-      background-color: #b6e0fa;
-    }
-    &.hinata {
-      background-color: #f5eac4;
-    }
-    .header {
-      padding-left: 20px;
-      height: 60px;
-      line-height: 60px;
+    padding: 5px 10px;
+    background-color: #fff;
+    .prev, .next {
+      display: inline-block;
+      height: 30px;
+      line-height: 30px;
       font-size: 20px;
-      font-weight: bold;
-    }
-    .comment {
-      margin: 0 10px;
-      padding: 10px;
-      font-size: 14px;
-      background-color: #fff;
+      a {
+        text-decoration: none;
+      }
     }
   }
-}
 
-.links {
-  list-style: none;
-  float: right;
-  margin-right: 4%;
-  padding: 10px;
-  background-color: #fff;
-  .prev, .next {
-    display: inline-block;
-    height: 24px;
-    line-height: 24px;
-    font-size: 20px;
-  }
-}
+  .search {
+    display: none;
+    .condition-list {
+      .from-date, .to-date {
 
-.search {
-  display: none;
-  .condition-list {
-    .from-date, .to-date {
+      }
+      .radio, .picture, .attachment {
 
-    }
-    .radio, .picture, .attachment {
-
+      }
     }
   }
 }
